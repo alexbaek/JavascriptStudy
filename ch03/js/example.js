@@ -31,7 +31,21 @@
             dayNames = ['일요일', '월요일', '수요일', '목요일', '금요일', '토요일'];
             monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
 
-            
+            day = dayNames[weekFromToday.getDay()];
+            date = weekFromToday.getDate();
+            month = monthNames[weekFromToday.getMonth()];
+            year = weekFromToday.getFullYear();
+
+            expriryMsg = '할인 행사는';
+            expriryMsg += day + '에 마감됨';
+            return expriryMsg;
         }
-    }
-)
+
+        today = new Date();
+        
+        elEnds = document.getElementById('offerEnds');
+        elEnds.innerHTML = offerExpires(today);
+    }()
+
+    
+);
